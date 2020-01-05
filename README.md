@@ -64,7 +64,6 @@ This project aims to be __the universal interface__ to __a growing number of Has
       - [Is \<package\> base-x?](#is-package-base-x)
       - [Is there a hash (#) after \<package\>?](#is-there-a-hash--after-package)
       - [Otherwise](#otherwise)
-    - [Nix: cabal-helper, No such file or directory](#nix-cabal-helper-no-such-file-or-directory)
     - [Liquid Haskell](#liquid-haskell)
     - [Profiling `haskell-ide-engine`.](#profiling-haskell-ide-engine)
       - [Using `ghc-events-analyze`](#using-ghc-events-analyze)
@@ -217,6 +216,12 @@ The install-script can be invoked via `cabal` instead of `stack` with the comman
 
 ```bash
 cabal v2-run ./install.hs --project-file install/shake.project <target>
+```
+
+or using the existing alias script
+
+```bash
+./cabal-hie-install <target>
 ```
 
 Running the script with cabal on windows requires a cabal version greater or equal to `3.0.0.0`.
@@ -725,6 +730,15 @@ This project is not started from scratch:
  - Join [our IRC channel](https://webchat.freenode.net/?channels=haskell-ide-engine) at `#haskell-ide-engine` on `freenode`.
  - Fork this repo and hack as much as you can.
  - Ask @alanz or @hvr to join the project.
+
+### Hacking on haskell-ide-engine
+
+Haskell-ide-engine can be used on its own project.  We have supplied
+preset samples of `hie.yaml` files for stack and cabal, simply copy
+the appropriate template to `hie.yaml` and it shoule work.
+
+- `hie.yaml.cbl` for cabal
+- `hie.yaml.stack` for stack
 
 ## Documentation
 
