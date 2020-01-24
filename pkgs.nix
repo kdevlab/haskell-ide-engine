@@ -33,6 +33,9 @@
     ({ lib, ... }:
       {
         reinstallableLibGhc = true;
+        doHaddock = false;
+        doHoogle = false;
+        doHyperlinkSource = false;
         packages = {
           "ghc" = {
             flags = { "ghci" = lib.mkForce true; };
