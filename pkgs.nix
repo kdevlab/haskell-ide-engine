@@ -32,7 +32,14 @@
   modules = [
     ({ lib, ... }:
       {
+        reinstallableLibGhc = true;
         packages = {
+          "ghc" = {
+            flags = { "ghci" = lib.mkForce true; };
+            };
+          "ghci" = {
+            flags = { "ghci" = lib.mkForce true; };
+            };
           "haskell-ide-engine" = {
             flags = { "pedantic" = lib.mkOverride 900 true; };
             };
